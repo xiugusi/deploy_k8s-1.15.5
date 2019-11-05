@@ -1,14 +1,15 @@
 ### centos7.7 部署 Kubernetes-1.15.x版本
 
-编辑options.conf文件，可以安装指定版本，目前测试过1.15.1 ~ 1.15.5
+编辑options.conf文件，可以安装指定版本，目前测试过1.15.1 ~ 1.15.3
 
 安装步骤：
 #### 1、修options.conf里面的参数:
 ```
-#1 更换yum源为Aliyun源，0不更换yum源
-aliyun="0"
+# 1更换yum源为Aliyun源，0不更换yum源
+aliyun="1"
 masterip="192.168.124.135"
-k8s_version="v1.15.1"
+k8s_version="v1.15.3"
+flannel_version="v0.11.0-amd64"
 root_passwd="123456"
 hostname="k8s"
 hostip=(
@@ -16,6 +17,9 @@ hostip=(
 192.168.124.136
 192.168.124.137
 )
+# 下面内容无需修改
+token=
+sha_value=
 ```
 
 #### 2、脚本授权，并执行安装
