@@ -223,7 +223,7 @@ install_flannel(){
 cd $home_path
 test -f kube-flannel.yml || wget https://raw.githubusercontent.com/coreos/flannel/62e44c867a2846fefb68bd5f178daf4da3095ccb/Documentation/kube-flannel.yml
 kubectl apply -f kube-flannel.yml
-echo "flannel 网络配置完毕！！"
+[ `docker images |grep -c $flannel_version` -gt 0 ] && echo "flannel 网络配置完毕！！" || echo "flannel 网络配置失败，请手动下载tar包并放在images目录！！"
 }
 
 
