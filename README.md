@@ -1,6 +1,6 @@
 ### centos7.7 部署 Kubernetes-1.15.x版本
 
-编辑options.conf文件，可以安装指定版本，目前测试过1.15.1 ~ 1.15.3
+编辑options.conf文件，可以安装指定版本，目前测试过1.15.1 ~ 1.15.5
 
 安装步骤：
 #### 1、修options.conf里面的参数:
