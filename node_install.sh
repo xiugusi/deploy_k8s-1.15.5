@@ -152,6 +152,7 @@ if [ $? -ne 0 ];then
     yum install -y kubelet-${k8s_version#v} kubeadm-${k8s_version#v} kubectl-${k8s_version#v} kubernetes-cni-0.7.5 && \
     systemctl daemon-reload && systemctl restart kubelet && systemctl enable kubelet || { echo 'K8s安装失败？？' ; exit 1 ; }
 fi
+[[ -s /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion && source <(kubectl completion bash)
 }
 
 
